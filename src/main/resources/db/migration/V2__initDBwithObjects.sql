@@ -1,0 +1,7 @@
+INSERT INTO infrastructura (name, availabily,description, coordinates) VALUES ('метро святошин', '','Пандус Ліфт Тактильна плитка', '50.458180, 30.387857');
+INSERT INTO infrastructura (name, availabily,description, coordinates) VALUES ('світлофор зі звуковим сигналом', '','Світлофор зі звуковим сигналом', '50.458948, 30.378959');
+INSERT INTO infrastructura (name, availabily,description, coordinates) VALUES ('світлофор зі звуковим сигналом', '','Світлофор зі звуковим сигналом', '50.462022, 30.375363');
+INSERT INTO infrastructura (name, availabily,description, coordinates) VALUES ('Сквер між будинками 59 на бульварі Вернадського та 2-4 на вулиці Доброхотова', '','Облаштовані засобами безбар’єрного доступу', '50.463480, 30.369136');
+INSERT INTO infrastructura (name, availabily,description, coordinates) VALUES ('Сквер між будинками 63-А та 71-А на бульварі Вернадського', '','Облаштовані засобами безбар’єрного доступу', '50.464536, 30.366417');
+INSERT INTO infrastructura (name, availabily,description, coordinates) VALUES ('вулиця Академіка Туполєва', '', 'Реконструйовано з урахуванням норм безбар’єрності (тактильно-візуальною розміткою, пониження бордюрів тощо) Понижений бордюр Тактильна плитка', '50.471987, 30.395929');
+INSERT INTO infrastructura (name, availabily,description, coordinates) VALUES ('Реконструкція вул. Авіаційної (колишня Туполєва)', '', 'Будівництво/ремонт з врахуванням норм безбар''єрності: ДБН В.2.3-5:2018 «Вулиці та дороги населених пунктів», ДБН В.2.2-40:2018 «Інклюзивність будівель та споруд»', '50.471908, 30.396034');
