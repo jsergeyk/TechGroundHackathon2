@@ -18,6 +18,7 @@ public class SecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.authorizeRequests()
                 .requestMatchers( "/built/**", "/node_modules/**", "/css/**", "/js/**", "/img/**").permitAll()
+                .requestMatchers("/api/v1/**").permitAll()
                 .requestMatchers( "/favicon.ico").permitAll()
                 .requestMatchers("/").permitAll()
                 .anyRequest()
