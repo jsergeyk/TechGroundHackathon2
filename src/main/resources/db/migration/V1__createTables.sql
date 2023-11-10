@@ -1,10 +1,10 @@
-CREATE TABLE type
+CREATE TABLE IF NOT EXISTS type
 (
     id   BIGINT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) NOT NULL
 );
 
-CREATE TABLE infrastructure
+CREATE TABLE IF NOT EXISTS infrastructure
 (
     id           BIGINT AUTO_INCREMENT PRIMARY KEY,
     name         VARCHAR(255) NOT NULL,
@@ -15,7 +15,7 @@ CREATE TABLE infrastructure
     foreign key (type_id) references type (id)
 );
 
-CREATE TABLE attribute
+CREATE TABLE IF NOT EXISTS attribute
 (
     id          BIGINT AUTO_INCREMENT PRIMARY KEY,
     name        VARCHAR(255) NOT NULL,
