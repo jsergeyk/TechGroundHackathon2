@@ -7,7 +7,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Infrastructura {
+public class Infrastructure {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "id", nullable = false)
@@ -31,7 +31,7 @@ public class Infrastructura {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Infrastructura that = (Infrastructura) o;
+        Infrastructure that = (Infrastructure) o;
 
         if (id != null ? !id.equals(that.id) : that.id != null) return false;
         if (name != null ? !name.equals(that.name) : that.name != null) return false;
