@@ -1,8 +1,12 @@
 package com.hackathon.entity;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
+@Getter
+@Setter
 public class Infrastructura {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
@@ -14,30 +18,6 @@ public class Infrastructura {
     @Basic
     @Column(name = "availabily", nullable = true, length = 45)
     private String availabily;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getAvailabily() {
-        return availabily;
-    }
-
-    public void setAvailabily(String availabily) {
-        this.availabily = availabily;
-    }
 
     @Override
     public boolean equals(Object o) {
