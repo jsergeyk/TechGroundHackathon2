@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/v1")
@@ -28,11 +27,8 @@ public class InfrastructureController {
     public ResponseEntity<List<InfrastructureDTO>> getAll() {
         List<Infrastructure> infrastructures = infrastructureService.findAll();
         List<InfrastructureDTO> infrastructureDTOs = infrastructures.stream()
-                .map(i -> {
-                    String typeName = i.getType() != null ? i.getType().getName() : null;
-                    return new InfrastructureDTO(i.getName(), i.getAvailability(), typeName, i.getCoordinates());
-                })
-                .collect(Collectors.toList());
+                .map(i -> new InfrastructureDTO(i.getName(), i.getAvailability(), i.getLatitude(), i.getLongitude()))
+                .toList();
         logger.info("GET /api/v1/infrastructures: " + infrastructureDTOs.size());
         return ResponseEntity.ok().body(infrastructureDTOs);
     }

@@ -3,9 +3,7 @@ package com.hackathon.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -27,14 +25,12 @@ public class Infrastructure {
 
     private String description;
 
-    private String coordinates;
+    private double latitude;
+    private double longitude;
 
     @ManyToMany(mappedBy = "infrastructures", cascade = {CascadeType.MERGE,CascadeType.PERSIST})
     @Setter(AccessLevel.PRIVATE)
     private Set<Attribute> attributes = new HashSet<>();
-
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    private Type type;
 
     @Override
     public boolean equals(Object o) {

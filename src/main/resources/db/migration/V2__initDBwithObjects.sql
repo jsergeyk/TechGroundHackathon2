@@ -1,10 +1,11 @@
--- INSERT INTO type (id, name) VALUES (1, 'Школа');
--- INSERT INTO type (id, name) VALUES (2, 'Комунальна установа');
---
--- INSERT INTO infrastructure (name, availability,description, coordinates) VALUES ('метро святошин', 1,'Пандус Ліфт Тактильна плитка', '50.458180, 30.387857');
--- INSERT INTO infrastructure (name, availability,description, coordinates) VALUES ('світлофор зі звуковим сигналом', 1, 'Світлофор зі звуковим сигналом', '50.458948, 30.378959');
--- INSERT INTO infrastructure (name, availability,description, coordinates) VALUES ('світлофор зі звуковим сигналом', 1, 'Світлофор зі звуковим сигналом', '50.462022, 30.375363');
--- INSERT INTO infrastructure (name, availability,description, coordinates) VALUES ('Сквер між будинками 59 на бульварі Вернадського та 2-4 на вулиці Доброхотова', 1, 'Облаштовані засобами безбар’єрного доступу', '50.463480, 30.369136');
+INSERT INTO infrastructure (name, availability, description, coordinates)
+VALUES ('метро святошин', 1, 'Пандус Ліфт Тактильна плитка', '50.458180, 30.387857');
+INSERT INTO infrastructure (name, availability, description, coordinates)
+VALUES ('світлофор зі звуковим сигналом', 1, 'Світлофор зі звуковим сигналом', '50.458948, 30.378959');
+INSERT INTO infrastructure (name, availability, description, coordinates)
+VALUES ('пандус', 1, 'пандус', '50.462022, 30.375363');
+INSERT INTO infrastructure (name, availability, description, coordinates)
+VALUES ('понижений бордюр', 1, 'Облаштовані засобами безбар’єрного доступу', '50.463480, 30.369136');
 -- INSERT INTO infrastructure (name, availability,description, coordinates) VALUES ('Сквер між будинками 63-А та 71-А на бульварі Вернадського', 1, 'Облаштовані засобами безбар’єрного доступу', '50.464536, 30.366417');
 -- INSERT INTO infrastructure (name, availability,description, coordinates) VALUES ('вулиця Академіка Туполєва', 1, 'Реконструйовано з урахуванням норм безбар’єрності (тактильно-візуальною розміткою, пониження бордюрів тощо) Понижений бордюр Тактильна плитка', '50.471987, 30.395929');
 -- INSERT INTO infrastructure (name, availability,description, coordinates) VALUES ('Реконструкція вул. Авіаційної (колишня Туполєва)', 1, 'Будівництво/ремонт з врахуванням норм безбар''єрності: ДБН В.2.3-5:2018 «Вулиці та дороги населених пунктів», ДБН В.2.2-40:2018 «Інклюзивність будівель та споруд»', '50.471908, 30.396034');

@@ -1,9 +1,13 @@
 package com.hackathon.dto.route.response;
 
-import lombok.Data;
+import lombok.*;
 
 @Data
-class Route {
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+public class Route {
 
     private int distanceMeters;
 
