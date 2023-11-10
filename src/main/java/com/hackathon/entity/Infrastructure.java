@@ -1,12 +1,18 @@
 package com.hackathon.entity;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 @Entity
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Infrastructure {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
@@ -18,13 +24,17 @@ public class Infrastructure {
     @Basic
     @Column(name = "availability")
     private Boolean availability;
-    @Basic
-    @Column(name = "type", nullable = false)
-    private Long type;
 
     private String description;
 
     private String coordinates;
+
+    @ManyToMany(mappedBy = "infrastructures", cascade = {CascadeType.MERGE,CascadeType.PERSIST})
+    @Setter(AccessLevel.PRIVATE)
+    private Set<Attribute> attributes = new HashSet<>();
+
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    private Type type;
 
     @Override
     public boolean equals(Object o) {

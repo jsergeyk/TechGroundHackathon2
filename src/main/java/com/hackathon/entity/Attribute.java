@@ -1,8 +1,17 @@
 package com.hackathon.entity;
 
 import jakarta.persistence.*;
+import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.Setter;
+
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 @Entity
+@Getter
+@Setter
 public class Attribute {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
@@ -12,21 +21,14 @@ public class Attribute {
     @Column(name = "name", nullable = false, length = 255)
     private String name;
 
-    public Long getId() {
-        return id;
-    }
+    private String description;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
+    @ManyToMany(cascade = {CascadeType.MERGE, CascadeType.PERSIST})
+    @JoinTable(name = "attribute_infrastructure",
+            joinColumns = @JoinColumn(name = "attribute_id"),
+            inverseJoinColumns = @JoinColumn(name = "infrastructure_id"))
+    @Setter(AccessLevel.PRIVATE)
+    private Set<Infrastructure> infrastructures = new HashSet<>();
 
     @Override
     public boolean equals(Object o) {

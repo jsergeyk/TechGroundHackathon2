@@ -1,8 +1,16 @@
 package com.hackathon.entity;
 
 import jakarta.persistence.*;
+import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.Setter;
+
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
+@Getter
+@Setter
 public class Type {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
@@ -11,23 +19,9 @@ public class Type {
     @Basic
     @Column(name = "name", nullable = false, length = 255)
     private String name;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
+    @OneToMany(mappedBy = "type")
+    @Setter(AccessLevel.PRIVATE)
+    private Set<Infrastructure> infrastructures = new HashSet<>();
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
