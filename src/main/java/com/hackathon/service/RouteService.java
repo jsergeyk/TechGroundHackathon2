@@ -5,6 +5,7 @@ import com.hackathon.dto.route.request.RouteModifiers;
 import com.hackathon.dto.route.request.RouteRequest;
 import com.hackathon.dto.route.response.RouteDTO;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
@@ -15,13 +16,15 @@ import org.springframework.web.client.RestTemplate;
 @RequiredArgsConstructor
 public class RouteService {
     private final RestTemplate restTemplate;
+    @Value("${google-maps.api.key}")
+    private String googleMapsApiKey;
 
     public RouteDTO getRoutePolyline(GetRouteRequestLocations getRouteRequestLocations) {
         RouteRequest routeRequest = buildRouteRequest(getRouteRequestLocations);
 
         HttpHeaders headers = new HttpHeaders();
         headers.set("X-Goog-FieldMask", "routes.duration,routes.distanceMeters,routes.polyline.encodedPolyline");
-        headers.set("X-Goog-Api-Key", "AIzaSyAb6LpS2kUgaB4FRL1-kQyeexf9a06eLvg"); //todo винести в проперті цей апі кей
+        headers.set("X-Goog-Api-Key", googleMapsApiKey);
 
         HttpEntity<RouteRequest> requestEntity = new HttpEntity<>(routeRequest, headers);
 
