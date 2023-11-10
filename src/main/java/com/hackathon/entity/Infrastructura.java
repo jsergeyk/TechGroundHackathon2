@@ -19,6 +19,10 @@ public class Infrastructura {
     @Column(name = "availabily", nullable = true, length = 45)
     private String availabily;
 
+    private String description;
+
+    private String coordinates;
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
