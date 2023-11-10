@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" th:with="lang=${#locale.language}" th:lang="${lang}">
+<head th:fragment="header">
+    <title th:text='title'></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}" href="/css/bootstrap.min.css" />
+	<link rel="stylesheet" th:href="@{/css/style.css}" href="/css/style.css"/>
+</head>
+<body>
+<div class="wrapper">
+<div class="content">
+	<div><p class="h3" th:text="title"></p></div>
+
+</div>
+
+</div>
+</body>
+</html>
