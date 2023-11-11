@@ -2,12 +2,21 @@ CREATE TABLE infrastructure
 (
     id           BIGINT AUTO_INCREMENT PRIMARY KEY,
     name         VARCHAR(255) NOT NULL,
-    availability BOOLEAN,
-    description  TEXT,
-    coordinates VARCHAR(255)
+    latitude    double,
+    longitude   double,
+    description TEXT
+
 );
 
-# інфраструктура як (школи, будівлі etc має атрибути) але інфраструктура як (пандус, світлофор, понижений бордюр) не буде мати атрибутів
+CREATE TABLE route_help_infrastructure
+(
+    id        BIGINT AUTO_INCREMENT PRIMARY KEY,
+    name      VARCHAR(255) NOT NULL,
+    description  TEXT,
+    latitude  double,
+    longitude double
+);
+
 
 CREATE TABLE IF NOT EXISTS attribute
 (

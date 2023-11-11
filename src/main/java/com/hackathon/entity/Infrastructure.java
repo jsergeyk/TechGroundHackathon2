@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 @Entity
@@ -19,9 +20,6 @@ public class Infrastructure {
     @Basic
     @Column(name = "name", nullable = false, length = 255)
     private String name;
-    @Basic
-    @Column(name = "availability")
-    private Boolean availability;
 
     private String description;
 
@@ -36,21 +34,12 @@ public class Infrastructure {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-
         Infrastructure that = (Infrastructure) o;
-
-        if (id != null ? !id.equals(that.id) : that.id != null) return false;
-        if (name != null ? !name.equals(that.name) : that.name != null) return false;
-        if (availability != null ? !availability.equals(that.availability) : that.availability != null) return false;
-
-        return true;
+        return Double.compare(latitude, that.latitude) == 0 && Double.compare(longitude, that.longitude) == 0 && Objects.equals(name, that.name);
     }
 
     @Override
     public int hashCode() {
-        int result = id != null ? id.hashCode() : 0;
-        result = 31 * result + (name != null ? name.hashCode() : 0);
-        result = 31 * result + (availability != null ? availability.hashCode() : 0);
-        return result;
+        return Objects.hash(name, latitude, longitude);
     }
 }

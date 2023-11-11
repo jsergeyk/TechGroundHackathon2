@@ -2,6 +2,8 @@ package com.hackathon.dto.route.request;
 
 import lombok.*;
 
+import java.util.List;
+
 @Data
 @Builder
 @NoArgsConstructor
@@ -13,6 +15,8 @@ public class RouteRequest {
     private Origin origin;
 
     private Destination destination;
+
+    private List<Intermediate> intermediates;
 
     private String travelMode;
 

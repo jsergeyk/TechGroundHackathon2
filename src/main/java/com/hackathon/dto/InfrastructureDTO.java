@@ -1,4 +1,4 @@
 package com.hackathon.dto;
 
-public record InfrastructureDTO(String name, Boolean availability, double latitude, double longitude) {
+public record InfrastructureDTO(String name, double latitude, double longitude) {
 }

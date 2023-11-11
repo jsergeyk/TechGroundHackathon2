@@ -27,7 +27,7 @@ public class InfrastructureController {
     public ResponseEntity<List<InfrastructureDTO>> getAll() {
         List<Infrastructure> infrastructures = infrastructureService.findAll();
         List<InfrastructureDTO> infrastructureDTOs = infrastructures.stream()
-                .map(i -> new InfrastructureDTO(i.getName(), i.getAvailability(), i.getLatitude(), i.getLongitude()))
+                .map(i -> new InfrastructureDTO(i.getName(), i.getLatitude(), i.getLongitude()))
                 .toList();
         logger.info("GET /api/v1/infrastructures: " + infrastructureDTOs.size());
         return ResponseEntity.ok().body(infrastructureDTOs);

@@ -1,4 +1,4 @@
-package com.hackathon.decoder;
+package com.hackathon.util;
 
 import com.hackathon.dto.route.response.LatLng;
 

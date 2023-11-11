@@ -1,11 +1,11 @@
 package com.hackathon.service;
 
-import com.hackathon.decoder.PolyLineDecoder;
 import com.hackathon.dto.route.request.GetRouteRequestLocations;
 import com.hackathon.dto.route.request.RouteModifiers;
 import com.hackathon.dto.route.request.RouteRequest;
 import com.hackathon.dto.route.response.LatLng;
 import com.hackathon.dto.route.response.RouteDTO;
+import com.hackathon.util.PolyLineDecoder;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
@@ -41,9 +41,10 @@ public class RouteService {
         return RouteRequest.builder()
                 .origin(getRouteRequestLocations.getOrigin())
                 .destination(getRouteRequestLocations.getDestination())
+                .intermediates(getRouteRequestLocations.getIntermediates())
                 .travelMode("WALK")
                 .routingPreference("ROUTING_PREFERENCE_UNSPECIFIED")
-                .computeAlternativeRoutes(true)
+                .computeAlternativeRoutes(false)
                 .routeModifiers(buildRouteModifiers())
                 .build();
     }
